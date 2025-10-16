@@ -39,7 +39,7 @@
         @endforelse
         </tbody>
     </table>
-    <div style="margin-top:12px">{{ $products->links() }}</div>
-    <div style="margin-top:12px"><a class="btn btn-primary" href="{{ route('products.sync.form') }}">Sync Supplier Feed</a></div>
+    <div class="mt-12">{{ $products->links() }}</div>
+    <div class="mt-12"><a class="btn btn-primary" href="{{ route('products.sync.form') }}">Sync Supplier Feed</a></div>
  </div>
 @endsection

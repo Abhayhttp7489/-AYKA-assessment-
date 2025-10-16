@@ -5,9 +5,9 @@
     <div class="card">
         <h2>Import via CSV</h2>
         <p class="muted">Upload a supplier CSV file. Duplicate SKUs are aggregated and upserted.</p>
-        <form method="post" action="{{ route('products.sync.csv') }}" enctype="multipart/form-data" style="margin-top:12px">
+        <form method="post" action="{{ route('products.sync.csv') }}" enctype="multipart/form-data" class="mt-12">
             @csrf
-            <div style="margin-bottom:8px">
+            <div class="form-group mb-8">
                 <label>CSV File</label>
                 <input type="file" name="csv" accept=".csv,.txt" required>
                 @error('csv')<div class="alert alert-error">{{ $message }}</div>@enderror
@@ -18,9 +18,9 @@
 
     <div class="card">
         <h2>Fetch via API</h2>
-        <form method="post" action="{{ route('products.sync.api') }}" style="margin-top:12px">
+        <form method="post" action="{{ route('products.sync.api') }}" class="mt-12">
             @csrf
-            <div style="margin-bottom:8px">
+            <div class="form-group mb-8">
                 <label>API URL</label>
                 <input type="url" name="api_url" placeholder="https://supplier.example.com/feed" required>
                 @error('api_url')<div class="alert alert-error">{{ $message }}</div>@enderror
@@ -41,7 +41,7 @@
             <div class="item"><div class="label">Updated</div><div class="value">{{ $r['updated'] }}</div></div>
         </div>
         @if(!empty($r['errors']))
-            <div class="alert alert-error" style="margin-top:12px">
+            <div class="alert alert-error mt-12">
                 <strong>Errors:</strong>
                 <ul>
                     @foreach($r['errors'] as $e)
@@ -50,9 +50,9 @@
                 </ul>
             </div>
         @else
-            <div class="alert alert-success" style="margin-top:12px">No validation errors.</div>
+            <div class="alert alert-success mt-12">No validation errors.</div>
         @endif
-        <div style="margin-top:12px"><a class="btn" href="{{ route('products.index') }}">View Products</a></div>
+        <div class="mt-12"><a class="btn" href="{{ route('products.index') }}">View Products</a></div>
     </div>
 @endif
 @endsection

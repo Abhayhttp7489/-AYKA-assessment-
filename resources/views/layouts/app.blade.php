@@ -20,6 +20,12 @@
         .btn-primary{background:#0ea5e9;border-color:#0ea5e9}
         .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
         .muted{color:var(--muted)}
+
+        /* Utility classes */
+        .mt-12{margin-top:12px}
+        .mb-8{margin-bottom:8px}
+        .form-group{margin-bottom:8px}
+        .flex-row{display:flex;gap:12px}
         input,select{width:100%;padding:8px;border-radius:8px;border:1px solid #1f2937;background:#0b1220;color:var(--text)}
         .alert{padding:12px;border-radius:8px;margin-bottom:12px}
         .alert-success{background:rgba(16,185,129,.1);border:1px solid var(--green)}
@@ -34,7 +40,7 @@
 <body>
 <div class="container">
     <div class="nav">
-        <div style="display:flex;gap:12px">
+        <div class="flex-row">
             <a href="{{ route('products.index') }}">Products</a>
             <a href="{{ route('products.sync.form') }}">Supplier Sync</a>
         </div>
